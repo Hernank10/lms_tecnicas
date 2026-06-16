@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>📚 Técnicas de Lenguaje y Comunicación</h1>
+<div class="cards-grid">
+    {% for t in tecnicas %}
+        <div class="card">
+            <h3>{{ t.titulo }}</h3>
+            <p><strong>Categoría:</strong> {{ t.categoria }}</p>
+            {% if t.grado %}
+                <p><strong>Grado:</strong> {{ t.grado }}</p>
+            {% endif %}
+            {% if t.id in progresos %}
+                {% if progresos|dictsort:t.id|first.completada %}
+                    <span style="color:green;">✅ Completada</span>
+                {% else %}
+                    <span style="color:orange;">⏳ En progreso</span>
+                {% endif %}
+            {% else %}
+                <span>⚪ Sin iniciar</span>
+            {% endif %}
+            <br><br>
+            <a href="{% url 'tecnica_detail' t.id %}" class="btn">Ver técnica</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

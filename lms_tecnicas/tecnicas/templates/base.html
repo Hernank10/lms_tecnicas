@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LMS Técnicas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f0f4fa; }
+        nav { background: #0f6b3a; padding: 10px; color: white; margin-bottom: 20px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        .container { max-width: 1200px; margin: auto; }
+        .btn { background: #0f6b3a; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+        .btn:hover { background: #1a8a4a; }
+        .card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">🏠 Inicio</a>
+        {% if user.is_staff %}
+            <a href="/profesor/">📊 Panel Profesor</a>
+        {% endif %}
+        <a href="/accounts/logout/">🚪 Cerrar sesión</a>
+        <span style="float:right">Bienvenido, {{ user.get_full_name|default:user.username }}</span>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

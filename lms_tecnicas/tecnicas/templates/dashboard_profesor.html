@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>📊 Panel del Profesor</h1>
+<div class="card">
+    <table border="1" cellpadding="10" style="width:100%;border-collapse:collapse;">
+        <thead>
+            <tr style="background:#0f6b3a;color:white;">
+                <th>Estudiante</th>
+                <th>Técnicas completadas</th>
+                <th>Porcentaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for est in estadisticas %}
+            <tr>
+                <td>{{ est.nombre }}</td>
+                <td>{{ est.completadas }}/{{ est.total }}</td>
+                <td>{{ est.porcentaje }}%</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3">No hay estudiantes registrados</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

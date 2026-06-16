@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>{{ tecnica.titulo }}</h2>
+    <p><strong>Categoría:</strong> {{ tecnica.categoria }}</p>
+    {% if tecnica.grado %}
+        <p><strong>Grado:</strong> {{ tecnica.grado }}</p>
+    {% endif %}
+    <hr>
+    {{ tecnica.contenido_html|safe }}
+    <hr>
+    <div id="progreso-message">
+        {% if progreso.completada %}
+            <p>✅ Técnica completada el {{ progreso.fecha_actualizacion }}</p>
+        {% else %}
+            <p>📌 Aún no has completado esta técnica. Responde los ejercicios para marcarla como completada.</p>
+        {% endif %}
+    </div>
+    <button id="marcar-completada" class="btn" {% if progreso.completada %}disabled{% endif %}>
+        Marcar como completada
+    </button>
+    <a href="{% url 'dashboard_estudiante' %}" class="btn">Volver al inicio</a>
+</div>
+<script>
+document.getElementById('marcar-completada')?.addEventListener('click', function() {
+    fetch("{% url 'guardar_progreso_api' tecnica.id %}", {
+        method: 'POST',
+        headers: {'X-CSRFToken': '{{ csrf_token }}', 'Content-Type': 'application/json'},
+        body: JSON.stringify({completada: true})
+    }).then(r => r.json()).then(data => {
+        location.reload();
+    });
+});
+</script>
+{% endblock %}
