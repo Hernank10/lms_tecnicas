@@ -1,0 +1,7 @@
+auth_group                 django_session           
+auth_group_permissions     progreso_estudiante      
+auth_permission            respuestas_ejercicios    
+categorias                 tecnicas                 
+django_admin_log           usuarios                 
+django_content_type        usuarios_groups          
+django_migrations          usuarios_user_permissions

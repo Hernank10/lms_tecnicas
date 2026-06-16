@@ -1,0 +1,364 @@
+1|Flexión de género (sustantivos)|Morfología flexiva|
+                <div class="teoria">📘 Los sustantivos varían de género con -o/-a u otras marcas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> niño/niña, poeta/poetisa</div>
+                ||1|2026-06-16 22:37:25.507922|2026-06-16 22:37:25.507974
+2|Flexión de número (plural)|Morfología flexiva|
+                <div class="teoria">📘 Se forma con -s, -es o invariables.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> árbol/árboles, crisis/crisis</div>
+                ||2|2026-06-16 22:37:25.523372|2026-06-16 22:37:25.523401
+3|Modo subjuntivo presente|Morfología flexiva|
+                <div class="teoria">📘 Expresa deseo, duda, posibilidad.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Espero que venga</div>
+                ||3|2026-06-16 22:37:25.527723|2026-06-16 22:37:25.527747
+4|Pretérito perfecto simple|Morfología flexiva|
+                <div class="teoria">📘 Acción pasada puntual: -é, -aste, -ó, etc.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> canté, comiste, vivió</div>
+                ||4|2026-06-16 22:37:25.534059|2026-06-16 22:37:25.534083
+5|Futuro de indicativo|Morfología flexiva|
+                <div class="teoria">📘 -é, -ás, -á, -emos, -éis, -án.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> hablaré, comerás</div>
+                ||5|2026-06-16 22:37:25.537812|2026-06-16 22:37:25.537830
+6|Condicional simple|Morfología flexiva|
+                <div class="teoria">📘 Expresa hipótesis: -ía, -ías, -ía...</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cantaría, comerías</div>
+                ||6|2026-06-16 22:37:25.543023|2026-06-16 22:37:25.543039
+7|Imperativo|Morfología flexiva|
+                <div class="teoria">📘 Modo para mandatos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> ¡Canta! ¡Comed!</div>
+                ||7|2026-06-16 22:37:25.546822|2026-06-16 22:37:25.546838
+8|Voz pasiva|Morfología flexiva|
+                <div class="teoria">📘 Ser + participio, el sujeto recibe la acción.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> El árbol fue derribado por el viento</div>
+                ||8|2026-06-16 22:37:25.551617|2026-06-16 22:37:25.551644
+9|Aspecto perfectivo|Morfología flexiva|
+                <div class="teoria">📘 Acción terminada.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Canté (perfectivo) / Cantaba (imperfectivo)</div>
+                ||9|2026-06-16 22:37:25.562422|2026-06-16 22:37:25.562450
+10|Persona gramatical|Morfología flexiva|
+                <div class="teoria">📘 Desinencias 1ª, 2ª, 3ª persona.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> hablo, hablas, habla</div>
+                ||10|2026-06-16 22:37:25.568117|2026-06-16 22:37:25.568139
+11|Prefijación (negación)|Derivación|
+                <div class="teoria">📘 Prefijos con significado negativo o reversivo.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> inútil, deshacer</div>
+                ||11|2026-06-16 22:37:25.574988|2026-06-16 22:37:25.575010
+12|Sufijación -ción|Derivación|
+                <div class="teoria">📘 Forma sustantivos abstractos deverbales.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> actuación, decisión</div>
+                ||12|2026-06-16 22:37:25.578325|2026-06-16 22:37:25.578348
+13|Interfijación|Derivación|
+                <div class="teoria">📘 Inserción de segmento no morfemático.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cafecito (café+c+ito)</div>
+                ||13|2026-06-16 22:37:25.582836|2026-06-16 22:37:25.582852
+14|Parasíntesis|Derivación|
+                <div class="teoria">📘 Prefijo + sufijo simultáneos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> entristecer (en-+triste+-ecer)</div>
+                ||14|2026-06-16 22:37:25.587351|2026-06-16 22:37:25.587373
+15|Sufijos aumentativos|Derivación|
+                <div class="teoria">📘 -ón, -azo.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cabezón, librazo</div>
+                ||15|2026-06-16 22:37:25.593902|2026-06-16 22:37:25.593927
+16|Sufijo diminutivo -ito|Sufijos apreciativos|
+                <div class="teoria">📘 Expresa tamaño pequeño o afecto.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> perrito, casita</div>
+                ||16|2026-06-16 22:37:25.597807|2026-06-16 22:37:25.597832
+17|Sufijo despectivo -ucho|Derivación|
+                <div class="teoria">📘 Indica desprecio.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> pueblucho</div>
+                ||17|2026-06-16 22:37:25.602581|2026-06-16 22:37:25.602786
+18|Sufijo -ble|Derivación|
+                <div class="teoria">📘 Posibilidad.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> amable, temible</div>
+                ||18|2026-06-16 22:37:25.606316|2026-06-16 22:37:25.606333
+19|Prefijo sub-|Derivación|
+                <div class="teoria">📘 Posición inferior.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> submarino, subsuelo</div>
+                ||19|2026-06-16 22:37:25.611992|2026-06-16 22:37:25.612009
+20|Sufijo -al|Derivación|
+                <div class="teoria">📘 Adjetivo relacional.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cultural, industrial</div>
+                ||20|2026-06-16 22:37:25.615922|2026-06-16 22:37:25.615947
+21|Sustantivos concretos/abstractos|Clases de palabras|
+                <div class="teoria">📘 Concretos: entidades físicas; abstractos: conceptos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> mesa (concreto), libertad (abstracto)</div>
+                ||21|2026-06-16 22:37:25.620038|2026-06-16 22:37:25.620065
+22|Adjetivos calificativos|Clases de palabras|
+                <div class="teoria">📘 Expresan cualidades.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> grande, azul</div>
+                ||22|2026-06-16 22:37:25.623787|2026-06-16 22:37:25.623809
+23|Verbos copulativos|Clases de palabras|
+                <div class="teoria">📘 Ser, estar, parecer.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Ella es doctora</div>
+                ||23|2026-06-16 22:37:25.629181|2026-06-16 22:37:25.629197
+24|Adverbios de modo|Clases de palabras|
+                <div class="teoria">📘 -mente o invariables.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> rápidamente, bien</div>
+                ||24|2026-06-16 22:37:25.633167|2026-06-16 22:37:25.633184
+25|Preposiciones|Clases de palabras|
+                <div class="teoria">📘 a, ante, bajo, con, contra, de, desde...</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Voy a Madrid</div>
+                ||25|2026-06-16 22:37:25.638936|2026-06-16 22:37:25.638960
+26|Conjunciones coordinantes|Clases de palabras|
+                <div class="teoria">📘 y, e, ni, o, u, pero, sino, mas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Juan y Pedro</div>
+                ||26|2026-06-16 22:37:25.642373|2026-06-16 22:37:25.642397
+27|Conjunciones subordinantes|Clases de palabras|
+                <div class="teoria">📘 que, porque, aunque, si.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Dijo que vendría</div>
+                ||27|2026-06-16 22:37:25.646071|2026-06-16 22:37:25.646094
+28|Determinantes demostrativos|Clases de palabras|
+                <div class="teoria">📘 este, ese, aquel.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Ese libro</div>
+                ||28|2026-06-16 22:37:25.653458|2026-06-16 22:37:25.653489
+29|Pronombres átonos|Clases de palabras|
+                <div class="teoria">📘 me, te, se, lo, la, le, nos, os, los, las, les.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Se lo di</div>
+                ||29|2026-06-16 22:37:25.663997|2026-06-16 22:37:25.664025
+30|Interjecciones|Clases de palabras|
+                <div class="teoria">📘 Expresan emociones: ¡ay!, ¡oh!, ¡caramba!</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> ¡Ay! Me duele</div>
+                ||30|2026-06-16 22:37:25.668310|2026-06-16 22:37:25.668333
+31|Composición propia|Formación de palabras|
+                <div class="teoria">📘 Unión de dos lexemas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> pelirrojo (pelo+rojo)</div>
+                ||31|2026-06-16 22:37:25.673182|2026-06-16 22:37:25.673206
+32|Composición yuxtapuesta|Formación de palabras|
+                <div class="teoria">📘 Palabras unidas sin fusión gráfica.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> coche cama, hombre rana</div>
+                ||32|2026-06-16 22:37:25.676945|2026-06-16 22:37:25.676966
+33|Acronimia|Formación de palabras|
+                <div class="teoria">📘 Formación con iniciales o sílabas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> OTAN, RENFE</div>
+                ||33|2026-06-16 22:37:25.683932|2026-06-16 22:37:25.683954
+34|Siglación|Formación de palabras|
+                <div class="teoria">📘 Abreviatura con letras iniciales.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> DGT, IVA</div>
+                ||34|2026-06-16 22:37:25.688098|2026-06-16 22:37:25.688115
+35|Composición culta|Formación de palabras|
+                <div class="teoria">📘 Raíces grecolatinas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> biología, hidroavión</div>
+                ||35|2026-06-16 22:37:25.691659|2026-06-16 22:37:25.691681
+36|Accidente de género|Accidentes gramaticales|
+                <div class="teoria">📘 Masulino/femenino en sustantivos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> el mar / la mar</div>
+                ||36|2026-06-16 22:37:25.695221|2026-06-16 22:37:25.695270
+37|Número gramatical|Accidentes gramaticales|
+                <div class="teoria">📘 Singular y plural.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> detalle → detalles</div>
+                ||37|2026-06-16 22:37:25.699164|2026-06-16 22:37:25.699188
+38|Persona verbal|Accidentes gramaticales|
+                <div class="teoria">📘 1ª, 2ª, 3ª persona.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> soy, eres, es</div>
+                ||38|2026-06-16 22:37:25.704361|2026-06-16 22:37:25.704379
+39|Tiempo verbal|Accidentes gramaticales|
+                <div class="teoria">📘 Presente, pasado, futuro.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> como, comí, comeré</div>
+                ||39|2026-06-16 22:37:25.710029|2026-06-16 22:37:25.710053
+40|Modo verbal|Accidentes gramaticales|
+                <div class="teoria">📘 Indicativo, subjuntivo, imperativo.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Creo que viene / Ojalá venga</div>
+                ||40|2026-06-16 22:37:25.713748|2026-06-16 22:37:25.713765
+46|Lexema o raíz|Morfemática|
+                <div class="teoria">📘 Núcleo semántico.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cant- en 'cantamos'</div>
+                ||46|2026-06-16 22:37:25.718880|2026-06-16 22:37:25.718900
+47|Morfema flexivo de tiempo|Morfemática|
+                <div class="teoria">📘 Desinencia de tiempo.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cantaba: -ba</div>
+                ||47|2026-06-16 22:37:25.722851|2026-06-16 22:37:25.722870
+48|Alomorfo de plural|Morfemática|
+                <div class="teoria">📘 Variantes: -s, -es, cero.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> soles, crisis</div>
+                ||48|2026-06-16 22:37:25.728797|2026-06-16 22:37:25.728817
+49|Alomorfo de género femenino|Morfemática|
+                <div class="teoria">📘 -a, -isa, -ina, -triz.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> actriz, princesa</div>
+                ||49|2026-06-16 22:37:25.732715|2026-06-16 22:37:25.732733
+50|Tema verbal|Morfemática|
+                <div class="teoria">📘 Raíz + vocal temática.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> cant-a-</div>
+                ||50|2026-06-16 22:37:25.736491|2026-06-16 22:37:25.736508
+51|Interfijo|Morfemática|
+                <div class="teoria">📘 Elemento sin significado.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> humareda (-ar-)</div>
+                ||51|2026-06-16 22:37:25.741792|2026-06-16 22:37:25.741809
+52|Morfema cero|Morfemática|
+                <div class="teoria">📘 Categoría sin marca.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> singular en 'mesa'</div>
+                ||52|2026-06-16 22:37:25.747039|2026-06-16 22:37:25.747056
+53|Supletismo|Morfemática|
+                <div class="teoria">📘 Reemplazo completo de la raíz.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> ir → voy, fui</div>
+                ||53|2026-06-16 22:37:25.750586|2026-06-16 22:37:25.750602
+54|Producción textual (1°-3°)|Estándares MEN|
+                <div class="teoria">📘 Escribir textos narrativos cortos con secuencia lógica.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Escribir un cuento de tres párrafos sobre un animal.</div>
+                |📘 1°-3°|54|2026-06-16 22:37:25.755786|2026-06-16 22:37:25.755809
+55|Comprensión literal (4°-5°)|Estándares MEN|
+                <div class="teoria">📘 Identificar información explícita en textos cortos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Preguntas como '¿Quién es el protagonista?'</div>
+                |📘 4°-5°|55|2026-06-16 22:37:25.762747|2026-06-16 22:37:25.762768
+56|Inferencia (6°-7°)|Estándares MEN|
+                <div class="teoria">📘 Deducir emociones o causas implícitas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'El motor sonaba extraño' → infiere problema mecánico.</div>
+                |📘 6°-7°|56|2026-06-16 22:37:25.766524|2026-06-16 22:37:25.766554
+57|Argumentación (8°-9°)|Estándares MEN|
+                <div class="teoria">📘 Defender por qué es obligatorio usar casco en moto.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> El casco reduce fracturas craneales en un 70%.</div>
+                |📘 8°-9°|57|2026-06-16 22:37:25.773760|2026-06-16 22:37:25.773782
+58|Ensayo crítico (10°-11°)|Estándares MEN|
+                <div class="teoria">📘 Escribir ensayo sobre el impacto ambiental de las motos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Comparar emisiones de moto vs auto.</div>
+                |📘 10°-11°|58|2026-06-16 22:37:25.776971|2026-06-16 22:37:25.776992
+59|Literatura y viajes|Estándares MEN|
+                <div class="teoria">📘 Relacionar crónicas de viaje con contexto histórico.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> La obra 'El motociclista' refleja la libertad de los años 70.</div>
+                |📘 10°-11°|59|2026-06-16 22:37:25.782669|2026-06-16 22:37:25.782685
+60|Lectura de mapas|Estándares MEN|
+                <div class="teoria">📘 Interpretar rutas, distancias y escalas en mapas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Mapa de Colombia muestra 120 km entre dos ciudades.</div>
+                |📘 4°-5°|60|2026-06-16 22:37:25.786167|2026-06-16 22:37:25.786183
+61|Ética de la comunicación|Estándares MEN|
+                <div class="teoria">📘 No difundir información falsa sobre accidentes de tránsito.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Verificar fuentes antes de compartir.</div>
+                |📘 10°-11°|61|2026-06-16 22:37:25.792661|2026-06-16 22:37:25.792680
+62|Competencia comunicativa (Hymes)|Concurso docente|
+                <div class="teoria">📘 Componentes: lingüístico, sociolingüístico, discursivo, estratégico.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Saber usar 'usted' vs 'tú' según contexto.</div>
+                ||62|2026-06-16 22:37:25.796118|2026-06-16 22:37:25.796135
+63|Estándares MEN|Concurso docente|
+                <div class="teoria">📘 Ejes: producción textual, comprensión, literatura, medios, ética.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Producción textual: escribir un cuento.</div>
+                ||63|2026-06-16 22:37:25.801335|2026-06-16 22:37:25.801356
+64|DBA|Concurso docente|
+                <div class="teoria">📘 Documento MEN con aprendizajes esenciales por grado.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> DBA de grado 3: producir textos descriptivos.</div>
+                ||64|2026-06-16 22:37:25.805032|2026-06-16 22:37:25.805052
+65|Evaluación formativa|Concurso docente|
+                <div class="teoria">📘 Proceso para regular el aprendizaje, no solo calificar.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Rúbricas, retroalimentación, autoevaluación.</div>
+                ||65|2026-06-16 22:37:25.810978|2026-06-16 22:37:25.810997
+66|Secuencia didáctica|Concurso docente|
+                <div class="teoria">📘 Fases: planificación, textualización, revisión.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Escribir un ensayo: planear, redactar, corregir.</div>
+                ||66|2026-06-16 22:37:25.814845|2026-06-16 22:37:25.814864
+71|Identificar tesis|Lectura crítica|
+                <div class="teoria">📘 La tesis es la idea central que se defiende.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'La V80 es ideal por su economía'</div>
+                ||71|2026-06-16 22:37:25.820474|2026-06-16 22:37:25.820492
+72|Falacia ad hominem|Lectura crítica|
+                <div class="teoria">📘 Atacar a la persona en lugar de argumentos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'No le creas porque es joven'</div>
+                ||72|2026-06-16 22:37:25.824147|2026-06-16 22:37:25.824164
+73|Falso dilema|Lectura crítica|
+                <div class="teoria">📘 Presentar solo dos opciones cuando hay más.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'O llevas casco o te mueres'</div>
+                ||73|2026-06-16 22:37:25.830028|2026-06-16 22:37:25.830046
+74|Inferencia causal|Lectura crítica|
+                <div class="teoria">📘 Deducir la causa de un evento.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'El motor se caló' → combustible.</div>
+                ||74|2026-06-16 22:37:25.833789|2026-06-16 22:37:25.833806
+75|Presuposición|Lectura crítica|
+                <div class="teoria">📘 Información implícita que se da por sentada.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'El conductor frenó' presupone peligro.</div>
+                ||75|2026-06-16 22:37:25.838733|2026-06-16 22:37:25.838749
+76|Plan de redacción|Comunicación escrita|
+                <div class="teoria">📘 Introducción, desarrollo, conclusión.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Crónica de viaje: salida, aventura, llegada.</div>
+                ||76|2026-06-16 22:37:25.842267|2026-06-16 22:37:25.842287
+77|Cohesión referencial|Comunicación escrita|
+                <div class="teoria">📘 Uso de pronombres para evitar repetición.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> La V80 es ágil. Ella sube bien.</div>
+                ||77|2026-06-16 22:37:25.848420|2026-06-16 22:37:25.848442
+78|Elipsis|Comunicación escrita|
+                <div class="teoria">📘 Omisión de elementos gramaticales sobreentendidos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Juan maneja y Pedro también [maneja].</div>
+                ||78|2026-06-16 22:37:25.852142|2026-06-16 22:37:25.852162
+79|Dequeísmo|Comunicación escrita|
+                <div class="teoria">📘 Uso incorrecto de 'de que'.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'Pienso de que es peligroso' (incorrecto)</div>
+                ||79|2026-06-16 22:37:25.860858|2026-06-16 22:37:25.860883
+80|Tilde diacrítica|Comunicación escrita|
+                <div class="teoria">📘 Diferencia homófonas: té/te, él/el, sí/si.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> 'Sé prudente' (verbo saber) vs 'Se lo di' (pronombre)</div>
+                ||80|2026-06-16 22:37:25.864213|2026-06-16 22:37:25.864262
+81|Yamaha V80 - Bujía NGK BPR6HS|Yamaha V80|
+                <div class="teoria">📘 La V80 usa bujía NGK BPR6HS. Llevar 2 repuestos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Síntomas: falla de encendido, ahogamiento.</div>
+                ||81|2026-06-16 22:37:25.869732|2026-06-16 22:37:25.869762
+82|Yamaha V80 - Cable de acelerador|Yamaha V80|
+                <div class="teoria">📘 Cable de acelerador de repuesto (80 cm). Se rompe en climas fríos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar cable de repuesto.</div>
+                ||82|2026-06-16 22:37:25.873346|2026-06-16 22:37:25.873371
+83|Yamaha V80 - Presión de llantas|Yamaha V80|
+                <div class="teoria">📘 Presión recomendada: 25 psi delantera y trasera.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Verificar presión en frío.</div>
+                ||83|2026-06-16 22:37:25.877115|2026-06-16 22:37:25.877140
+84|Suzuki Nova 125 - Aceite 10W40|Suzuki Nova|
+                <div class="teoria">📘 Capacidad 1.2L. Cambiar cada 3000 km.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Aceite 10W40 semisintético.</div>
+                ||84|2026-06-16 22:37:25.881017|2026-06-16 22:37:25.881040
+85|Suzuki Nova 125 - Cadena 428|Suzuki Nova|
+                <div class="teoria">📘 Cadena 428, piñón 15 dientes, corona 42 dientes.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar eslabón rápido.</div>
+                ||85|2026-06-16 22:37:25.886946|2026-06-16 22:37:25.886966
+86|Suzuki Nova 125 - Bujía CR7HSA|Suzuki Nova|
+                <div class="teoria">📘 Bujía NGK CR7HSA o CR8HSA.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Síntomas: falla de encendido, tirones.</div>
+                ||86|2026-06-16 22:37:25.890787|2026-06-16 22:37:25.890806
+87|Renault Megane 1.6 - Correa distribución|Megane|
+                <div class="teoria">📘 Motor K4M. Cambiar correa cada 60.000 km o 5 años.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar kit completo.</div>
+                ||87|2026-06-16 22:37:25.896771|2026-06-16 22:37:25.896792
+88|Renault Megane 1.6 - Aceite 10W40|Megane|
+                <div class="teoria">📘 Capacidad 5.2 litros. Usar 10W40 sintético.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar 1 litro extra.</div>
+                ||88|2026-06-16 22:37:25.905435|2026-06-16 22:37:25.905464
+89|Renault Megane 1.6 - Autonomía|Megane|
+                <div class="teoria">📘 Tanque 60L, consumo ~8L/100 km → autonomía ~700 km.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Ideal para viajes largos.</div>
+                ||89|2026-06-16 22:37:25.910098|2026-06-16 22:37:25.910118
+90|Kit de herramientas básico|Yamaha V80|
+                <div class="teoria">📘 Llaves 8,10,12,14, extractor de bujía, destornilladores.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar parche de llantas.</div>
+                ||90|2026-06-16 22:37:25.915302|2026-06-16 22:37:25.915321
+91|Ruta Bucaramanga - Santa Marta|Rutas Colombia|
+                <div class="teoria">📘 400 km, 7 horas. Clima cálido, revisar refrigerante.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> El Megane con A/C consume más, monitorear temperatura.</div>
+                ||91|2026-06-16 22:37:25.919175|2026-06-16 22:37:25.919194
+92|Ruta Bogotá - Villavicencio|Rutas Colombia|
+                <div class="teoria">📘 160 km, Alto de la Línea (3300 msnm).</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Usar bujía caliente para altura.</div>
+                ||92|2026-06-16 22:37:25.924581|2026-06-16 22:37:25.924599
+93|Ruta Medellín - Turbo|Rutas Colombia|
+                <div class="teoria">📘 320 km, carretera en buen estado con muchas curvas.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Hacer paradas cada 100 km.</div>
+                ||93|2026-06-16 22:37:25.928275|2026-06-16 22:37:25.928295
+94|Ruta Cali - Buenaventura|Rutas Colombia|
+                <div class="teoria">📘 120 km, descensos pronunciados. Usar freno motor.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Revisar pastillas antes.</div>
+                ||94|2026-06-16 22:37:25.932089|2026-06-16 22:37:25.932108
+95|Acampe - Kit básico|Acampe|
+                <div class="teoria">📘 Carpa (3 estaciones), sleeping bag, linterna, mechero, cocinilla.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> La SZR150 puede llevar alforjas laterales.</div>
+                ||95|2026-06-16 22:37:25.937183|2026-06-16 22:37:25.937201
+96|Acampe en la playa (Santa Marta)|Acampe|
+                <div class="teoria">📘 Playa Los Ángeles, acampe permitido. Cuidado con marea alta.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Llevar protector solar y abundante agua.</div>
+                ||96|2026-06-16 22:37:25.942057|2026-06-16 22:37:25.942075
+97|Acampe - Alimentos no perecederos|Acampe|
+                <div class="teoria">📘 Atún, galletas, arroz instantáneo, frutos secos, chocolate energético.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> En moto pequeña, priorizar peso ligero.</div>
+                ||97|2026-06-16 22:37:25.946198|2026-06-16 22:37:25.946217
+98|Purificación de agua|Acampe|
+                <div class="teoria">📘 Usar pastillas potabilizadoras o hervir durante 5 minutos.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> En ríos de montaña, el agua puede tener bacterias.</div>
+                ||98|2026-06-16 22:37:25.949993|2026-06-16 22:37:25.950013
+99|Seguridad - Documentos obligatorios|Seguridad|
+                <div class="teoria">📘 SOAT, licencia, tarjeta de propiedad, cédula.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> Multa por no portarlos.</div>
+                ||99|2026-06-16 22:37:25.955498|2026-06-16 22:37:25.955518
+100|Seguridad - Kit de primeros auxilios|Seguridad|
+                <div class="teoria">📘 Incluir gasa, vendas, alcohol, curitas, analgésico.</div>
+                <div class="ejemplo"><strong>Ejemplo:</strong> En zonas remotas, es vital.</div>
+                ||100|2026-06-16 22:37:25.958869|2026-06-16 22:37:25.958888
