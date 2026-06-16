@@ -1,0 +1,3174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Técnicas Educativas - 100 técnicas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: linear-gradient(145deg, #f0f4fa 0%, #e2e9f2 100%);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1a2e40;
+        }
+        .container { max-width: 1500px; margin: 0 auto; }
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #0f6b3a;
+            width: 100%;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #0f6b3a, #2a9d6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        .hero p { font-size: 1.1rem; color: #2d5a3b; margin-top: 0.5rem; font-style: italic; }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            margin: 1.5rem 0 2rem;
+            gap: 1rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+        .badge {
+            background: #0f6b3a;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .progress-area {
+            display: flex;
+            gap: 1.5rem;
+            align-items: baseline;
+            font-weight: 500;
+        }
+        .progress-bar-container {
+            width: 180px;
+            height: 8px;
+            background-color: #cfe3d9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill { width: 0%; height: 100%; background-color: #0f6b3a; transition: width 0.3s; }
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .filter-bar input, .filter-bar select {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .filter-bar input { flex: 2; min-width: 220px; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 1.8rem; }
+        .card {
+            background: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            border: 1px solid #cde0d6;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-header { background: #e8f3ed; padding: 1rem 1.5rem; border-bottom: 1px solid #cde0d6; }
+        .card-header h3 { font-size: 1.25rem; font-weight: 700; color: #1a5a3a; }
+        .category-tag {
+            display: inline-block;
+            background: #cfe3d9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            color: #1a5a3a;
+        }
+        .grade-tag {
+            display: inline-block;
+            background: #0f6b3a;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+        }
+        .card-body { padding: 1.2rem 1.5rem; flex-grow: 1; }
+        .teoria {
+            background: #f4faf7;
+            padding: 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            border-left: 5px solid #0f6b3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .ejemplo {
+            background: #edf6f1;
+            padding: 0.5rem 0.8rem;
+            border-radius: 16px;
+            margin: 0.7rem 0;
+            font-family: monospace;
+            color: #1a5a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .btn-speak {
+            background: #0f6b3a;
+            border: none;
+            color: white;
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+        .btn-speak:hover { background: #1a8a4a; }
+        .ejercicio-area { background: #f8fbf9; padding: 0.7rem; border-radius: 20px; margin: 0.8rem 0; }
+        .ejercicio-text { font-style: italic; margin-bottom: 0.6rem; font-weight: 500; }
+        .input-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.5rem 0; }
+        .input-group input { flex: 2; padding: 8px 12px; border: 1px solid #cde0d6; border-radius: 30px; font-size: 0.85rem; outline: none; }
+        .check-btn { background: #0f6b3a; color: white; border: none; padding: 8px 16px; border-radius: 30px; cursor: pointer; font-weight: bold; }
+        .check-btn:hover { background: #1a8a4a; }
+        .feedback { font-size: 0.8rem; margin-top: 5px; font-weight: 500; }
+        .feedback.correct { color: #0f6b3a; }
+        .feedback.incorrect { color: #c23b22; }
+        .hidden-answer {
+            display: none;
+            background: #e0f0e6;
+            border-radius: 20px;
+            padding: 0.6rem 1rem;
+            margin-top: 0.5rem;
+            border-left: 4px solid #0f6b3a;
+            font-size: 0.85rem;
+        }
+        .answer-hint {
+            background: #cfe3ed;
+            border-radius: 24px;
+            padding: 0.6rem 1rem;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.1s;
+            text-align: center;
+            font-weight: 500;
+            color: #1e4155;
+        }
+        .answer-hint:hover { background: #b2cfdf; }
+        .reset-card-btn {
+            margin-top: 8px;
+            background: none;
+            border: none;
+            color: #5c8a6e;
+            cursor: pointer;
+            font-size: 0.7rem;
+            text-decoration: underline;
+        }
+        .footer-note { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #5c8a6e; border-top: 1px solid #cde0d6; padding-top: 2rem; }
+        .status-icon { font-size: 0.8rem; display: inline-block; margin-left: 8px; }
+        @media (max-width: 700px) {
+            .stats { flex-direction: column; align-items: center; }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>100 Técnicas Educativas</h1>
+        <p>Generado por Hernank10 · 100 técnicas educativas</p>
+    </div>
+    <div class="stats">
+        <span>📚 Inventario: <strong>100</strong> entradas</span>
+        <div class="progress-area">
+            <span>🏆 Progreso:</span>
+            <div class="progress-bar-container"><div class="progress-fill" id="globalProgressFill"></div></div>
+            <span id="progressPercent">0%</span>
+        </div>
+        <span class="badge">✍️ teoría + ejemplo + ejercicio interactivo</span>
+    </div>
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar...">
+        <select id="categorySelect">
+            <option value="all">📌 Todas las categorías</option>
+            <option value="Educación general">Educación general</option>
+            <option value="Gramática">Gramática</option>
+            <option value="Morfología flexiva">Morfología flexiva</option>
+        </select>
+    </div>
+    <div id="cardsContainer" class="cards-grid">
+        <div class="card" data-id="1">
+            <div class="card-header">
+                <h3>#1 · Flexión de género <span id="status-1" class="status-icon"></span></h3>
+                <span class="category-tag">Morfología flexiva</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Los sustantivos varían de género con -o/-a</span>
+                    <button class="btn-speak" data-text="Los sustantivos varían de género con -o/-a">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 niño/niña, poeta/poetisa</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="niño/niña, poeta/poetisa">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Femenino de 'actor'</div>
+                    <div class="input-group">
+                        <input type="text" id="input-1" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="1">Comprobar</button>
+                    </div>
+                    <div id="feedback-1" class="feedback"></div>
+                    <div class="answer-hint" data-id="1">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-1" class="hidden-answer">✅ actriz</div>
+                    <button class="reset-card-btn" data-id="1">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="2">
+            <div class="card-header">
+                <h3>#2 · Flexión de número <span id="status-2" class="status-icon"></span></h3>
+                <span class="category-tag">Morfología flexiva</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Se forma con -s, -es o invariables</span>
+                    <button class="btn-speak" data-text="Se forma con -s, -es o invariables">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 árbol/árboles, crisis/crisis</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="árbol/árboles, crisis/crisis">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Plural de 'jabalí'</div>
+                    <div class="input-group">
+                        <input type="text" id="input-2" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="2">Comprobar</button>
+                    </div>
+                    <div id="feedback-2" class="feedback"></div>
+                    <div class="answer-hint" data-id="2">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-2" class="hidden-answer">✅ jabalíes</div>
+                    <button class="reset-card-btn" data-id="2">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="3">
+            <div class="card-header">
+                <h3>#3 · Modo subjuntivo <span id="status-3" class="status-icon"></span></h3>
+                <span class="category-tag">Morfología flexiva</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Expresa deseo, duda, posibilidad</span>
+                    <button class="btn-speak" data-text="Expresa deseo, duda, posibilidad">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Espero que venga</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Espero que venga">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Conjuga 'temer' 3ª singular</div>
+                    <div class="input-group">
+                        <input type="text" id="input-3" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="3">Comprobar</button>
+                    </div>
+                    <div id="feedback-3" class="feedback"></div>
+                    <div class="answer-hint" data-id="3">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-3" class="hidden-answer">✅ tema</div>
+                    <button class="reset-card-btn" data-id="3">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="4">
+            <div class="card-header">
+                <h3>#4 · Oración simple <span id="status-4" class="status-icon"></span></h3>
+                <span class="category-tag">Gramática</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Sujeto + predicado</span>
+                    <button class="btn-speak" data-text="Sujeto + predicado">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 El niño juega</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="El niño juega">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Sujeto de 'Cantan los pájaros'</div>
+                    <div class="input-group">
+                        <input type="text" id="input-4" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="4">Comprobar</button>
+                    </div>
+                    <div id="feedback-4" class="feedback"></div>
+                    <div class="answer-hint" data-id="4">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-4" class="hidden-answer">✅ los pájaros</div>
+                    <button class="reset-card-btn" data-id="4">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="5">
+            <div class="card-header">
+                <h3>#5 · Complemento directo <span id="status-5" class="status-icon"></span></h3>
+                <span class="category-tag">Gramática</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Recibe la acción</span>
+                    <button class="btn-speak" data-text="Recibe la acción">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Vi a Juan → Lo vi</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Vi a Juan → Lo vi">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Reemplaza CD: 'Compré manzanas'</div>
+                    <div class="input-group">
+                        <input type="text" id="input-5" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="5">Comprobar</button>
+                    </div>
+                    <div id="feedback-5" class="feedback"></div>
+                    <div class="answer-hint" data-id="5">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-5" class="hidden-answer">✅ Las compré</div>
+                    <button class="reset-card-btn" data-id="5">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="6">
+            <div class="card-header">
+                <h3>#6 · Técnica educativa 6 <span id="status-6" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 6: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 6: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 6: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 6: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 6</div>
+                    <div class="input-group">
+                        <input type="text" id="input-6" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="6">Comprobar</button>
+                    </div>
+                    <div id="feedback-6" class="feedback"></div>
+                    <div class="answer-hint" data-id="6">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-6" class="hidden-answer">✅ Respuesta sugerida para la técnica 6</div>
+                    <button class="reset-card-btn" data-id="6">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="7">
+            <div class="card-header">
+                <h3>#7 · Técnica educativa 7 <span id="status-7" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 7: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 7: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 7: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 7: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 7</div>
+                    <div class="input-group">
+                        <input type="text" id="input-7" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="7">Comprobar</button>
+                    </div>
+                    <div id="feedback-7" class="feedback"></div>
+                    <div class="answer-hint" data-id="7">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-7" class="hidden-answer">✅ Respuesta sugerida para la técnica 7</div>
+                    <button class="reset-card-btn" data-id="7">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="8">
+            <div class="card-header">
+                <h3>#8 · Técnica educativa 8 <span id="status-8" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 8: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 8: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 8: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 8: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 8</div>
+                    <div class="input-group">
+                        <input type="text" id="input-8" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="8">Comprobar</button>
+                    </div>
+                    <div id="feedback-8" class="feedback"></div>
+                    <div class="answer-hint" data-id="8">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-8" class="hidden-answer">✅ Respuesta sugerida para la técnica 8</div>
+                    <button class="reset-card-btn" data-id="8">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="9">
+            <div class="card-header">
+                <h3>#9 · Técnica educativa 9 <span id="status-9" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 9: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 9: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 9: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 9: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 9</div>
+                    <div class="input-group">
+                        <input type="text" id="input-9" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="9">Comprobar</button>
+                    </div>
+                    <div id="feedback-9" class="feedback"></div>
+                    <div class="answer-hint" data-id="9">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-9" class="hidden-answer">✅ Respuesta sugerida para la técnica 9</div>
+                    <button class="reset-card-btn" data-id="9">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="10">
+            <div class="card-header">
+                <h3>#10 · Técnica educativa 10 <span id="status-10" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 10: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 10: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 10: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 10: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 10</div>
+                    <div class="input-group">
+                        <input type="text" id="input-10" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="10">Comprobar</button>
+                    </div>
+                    <div id="feedback-10" class="feedback"></div>
+                    <div class="answer-hint" data-id="10">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-10" class="hidden-answer">✅ Respuesta sugerida para la técnica 10</div>
+                    <button class="reset-card-btn" data-id="10">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="11">
+            <div class="card-header">
+                <h3>#11 · Técnica educativa 11 <span id="status-11" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 11: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 11: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 11: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 11: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 11</div>
+                    <div class="input-group">
+                        <input type="text" id="input-11" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="11">Comprobar</button>
+                    </div>
+                    <div id="feedback-11" class="feedback"></div>
+                    <div class="answer-hint" data-id="11">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-11" class="hidden-answer">✅ Respuesta sugerida para la técnica 11</div>
+                    <button class="reset-card-btn" data-id="11">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="12">
+            <div class="card-header">
+                <h3>#12 · Técnica educativa 12 <span id="status-12" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 12: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 12: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 12: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 12: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 12</div>
+                    <div class="input-group">
+                        <input type="text" id="input-12" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="12">Comprobar</button>
+                    </div>
+                    <div id="feedback-12" class="feedback"></div>
+                    <div class="answer-hint" data-id="12">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-12" class="hidden-answer">✅ Respuesta sugerida para la técnica 12</div>
+                    <button class="reset-card-btn" data-id="12">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="13">
+            <div class="card-header">
+                <h3>#13 · Técnica educativa 13 <span id="status-13" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 13: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 13: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 13: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 13: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 13</div>
+                    <div class="input-group">
+                        <input type="text" id="input-13" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="13">Comprobar</button>
+                    </div>
+                    <div id="feedback-13" class="feedback"></div>
+                    <div class="answer-hint" data-id="13">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-13" class="hidden-answer">✅ Respuesta sugerida para la técnica 13</div>
+                    <button class="reset-card-btn" data-id="13">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="14">
+            <div class="card-header">
+                <h3>#14 · Técnica educativa 14 <span id="status-14" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 14: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 14: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 14: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 14: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 14</div>
+                    <div class="input-group">
+                        <input type="text" id="input-14" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="14">Comprobar</button>
+                    </div>
+                    <div id="feedback-14" class="feedback"></div>
+                    <div class="answer-hint" data-id="14">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-14" class="hidden-answer">✅ Respuesta sugerida para la técnica 14</div>
+                    <button class="reset-card-btn" data-id="14">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="15">
+            <div class="card-header">
+                <h3>#15 · Técnica educativa 15 <span id="status-15" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 15: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 15: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 15: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 15: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 15</div>
+                    <div class="input-group">
+                        <input type="text" id="input-15" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="15">Comprobar</button>
+                    </div>
+                    <div id="feedback-15" class="feedback"></div>
+                    <div class="answer-hint" data-id="15">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-15" class="hidden-answer">✅ Respuesta sugerida para la técnica 15</div>
+                    <button class="reset-card-btn" data-id="15">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="16">
+            <div class="card-header">
+                <h3>#16 · Técnica educativa 16 <span id="status-16" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 16: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 16: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 16: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 16: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 16</div>
+                    <div class="input-group">
+                        <input type="text" id="input-16" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="16">Comprobar</button>
+                    </div>
+                    <div id="feedback-16" class="feedback"></div>
+                    <div class="answer-hint" data-id="16">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-16" class="hidden-answer">✅ Respuesta sugerida para la técnica 16</div>
+                    <button class="reset-card-btn" data-id="16">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="17">
+            <div class="card-header">
+                <h3>#17 · Técnica educativa 17 <span id="status-17" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 17: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 17: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 17: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 17: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 17</div>
+                    <div class="input-group">
+                        <input type="text" id="input-17" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="17">Comprobar</button>
+                    </div>
+                    <div id="feedback-17" class="feedback"></div>
+                    <div class="answer-hint" data-id="17">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-17" class="hidden-answer">✅ Respuesta sugerida para la técnica 17</div>
+                    <button class="reset-card-btn" data-id="17">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="18">
+            <div class="card-header">
+                <h3>#18 · Técnica educativa 18 <span id="status-18" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 18: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 18: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 18: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 18: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 18</div>
+                    <div class="input-group">
+                        <input type="text" id="input-18" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="18">Comprobar</button>
+                    </div>
+                    <div id="feedback-18" class="feedback"></div>
+                    <div class="answer-hint" data-id="18">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-18" class="hidden-answer">✅ Respuesta sugerida para la técnica 18</div>
+                    <button class="reset-card-btn" data-id="18">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="19">
+            <div class="card-header">
+                <h3>#19 · Técnica educativa 19 <span id="status-19" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 19: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 19: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 19: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 19: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 19</div>
+                    <div class="input-group">
+                        <input type="text" id="input-19" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="19">Comprobar</button>
+                    </div>
+                    <div id="feedback-19" class="feedback"></div>
+                    <div class="answer-hint" data-id="19">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-19" class="hidden-answer">✅ Respuesta sugerida para la técnica 19</div>
+                    <button class="reset-card-btn" data-id="19">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="20">
+            <div class="card-header">
+                <h3>#20 · Técnica educativa 20 <span id="status-20" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 20: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 20: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 20: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 20: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 20</div>
+                    <div class="input-group">
+                        <input type="text" id="input-20" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="20">Comprobar</button>
+                    </div>
+                    <div id="feedback-20" class="feedback"></div>
+                    <div class="answer-hint" data-id="20">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-20" class="hidden-answer">✅ Respuesta sugerida para la técnica 20</div>
+                    <button class="reset-card-btn" data-id="20">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="21">
+            <div class="card-header">
+                <h3>#21 · Técnica educativa 21 <span id="status-21" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 21: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 21: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 21: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 21: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 21</div>
+                    <div class="input-group">
+                        <input type="text" id="input-21" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="21">Comprobar</button>
+                    </div>
+                    <div id="feedback-21" class="feedback"></div>
+                    <div class="answer-hint" data-id="21">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-21" class="hidden-answer">✅ Respuesta sugerida para la técnica 21</div>
+                    <button class="reset-card-btn" data-id="21">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="22">
+            <div class="card-header">
+                <h3>#22 · Técnica educativa 22 <span id="status-22" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 22: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 22: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 22: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 22: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 22</div>
+                    <div class="input-group">
+                        <input type="text" id="input-22" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="22">Comprobar</button>
+                    </div>
+                    <div id="feedback-22" class="feedback"></div>
+                    <div class="answer-hint" data-id="22">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-22" class="hidden-answer">✅ Respuesta sugerida para la técnica 22</div>
+                    <button class="reset-card-btn" data-id="22">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="23">
+            <div class="card-header">
+                <h3>#23 · Técnica educativa 23 <span id="status-23" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 23: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 23: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 23: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 23: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 23</div>
+                    <div class="input-group">
+                        <input type="text" id="input-23" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="23">Comprobar</button>
+                    </div>
+                    <div id="feedback-23" class="feedback"></div>
+                    <div class="answer-hint" data-id="23">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-23" class="hidden-answer">✅ Respuesta sugerida para la técnica 23</div>
+                    <button class="reset-card-btn" data-id="23">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="24">
+            <div class="card-header">
+                <h3>#24 · Técnica educativa 24 <span id="status-24" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 24: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 24: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 24: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 24: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 24</div>
+                    <div class="input-group">
+                        <input type="text" id="input-24" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="24">Comprobar</button>
+                    </div>
+                    <div id="feedback-24" class="feedback"></div>
+                    <div class="answer-hint" data-id="24">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-24" class="hidden-answer">✅ Respuesta sugerida para la técnica 24</div>
+                    <button class="reset-card-btn" data-id="24">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="25">
+            <div class="card-header">
+                <h3>#25 · Técnica educativa 25 <span id="status-25" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 25: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 25: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 25: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 25: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 25</div>
+                    <div class="input-group">
+                        <input type="text" id="input-25" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="25">Comprobar</button>
+                    </div>
+                    <div id="feedback-25" class="feedback"></div>
+                    <div class="answer-hint" data-id="25">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-25" class="hidden-answer">✅ Respuesta sugerida para la técnica 25</div>
+                    <button class="reset-card-btn" data-id="25">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="26">
+            <div class="card-header">
+                <h3>#26 · Técnica educativa 26 <span id="status-26" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 26: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 26: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 26: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 26: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 26</div>
+                    <div class="input-group">
+                        <input type="text" id="input-26" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="26">Comprobar</button>
+                    </div>
+                    <div id="feedback-26" class="feedback"></div>
+                    <div class="answer-hint" data-id="26">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-26" class="hidden-answer">✅ Respuesta sugerida para la técnica 26</div>
+                    <button class="reset-card-btn" data-id="26">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="27">
+            <div class="card-header">
+                <h3>#27 · Técnica educativa 27 <span id="status-27" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 27: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 27: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 27: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 27: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 27</div>
+                    <div class="input-group">
+                        <input type="text" id="input-27" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="27">Comprobar</button>
+                    </div>
+                    <div id="feedback-27" class="feedback"></div>
+                    <div class="answer-hint" data-id="27">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-27" class="hidden-answer">✅ Respuesta sugerida para la técnica 27</div>
+                    <button class="reset-card-btn" data-id="27">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="28">
+            <div class="card-header">
+                <h3>#28 · Técnica educativa 28 <span id="status-28" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 28: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 28: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 28: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 28: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 28</div>
+                    <div class="input-group">
+                        <input type="text" id="input-28" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="28">Comprobar</button>
+                    </div>
+                    <div id="feedback-28" class="feedback"></div>
+                    <div class="answer-hint" data-id="28">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-28" class="hidden-answer">✅ Respuesta sugerida para la técnica 28</div>
+                    <button class="reset-card-btn" data-id="28">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="29">
+            <div class="card-header">
+                <h3>#29 · Técnica educativa 29 <span id="status-29" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 29: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 29: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 29: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 29: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 29</div>
+                    <div class="input-group">
+                        <input type="text" id="input-29" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="29">Comprobar</button>
+                    </div>
+                    <div id="feedback-29" class="feedback"></div>
+                    <div class="answer-hint" data-id="29">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-29" class="hidden-answer">✅ Respuesta sugerida para la técnica 29</div>
+                    <button class="reset-card-btn" data-id="29">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="30">
+            <div class="card-header">
+                <h3>#30 · Técnica educativa 30 <span id="status-30" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 30: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 30: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 30: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 30: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 30</div>
+                    <div class="input-group">
+                        <input type="text" id="input-30" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="30">Comprobar</button>
+                    </div>
+                    <div id="feedback-30" class="feedback"></div>
+                    <div class="answer-hint" data-id="30">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-30" class="hidden-answer">✅ Respuesta sugerida para la técnica 30</div>
+                    <button class="reset-card-btn" data-id="30">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="31">
+            <div class="card-header">
+                <h3>#31 · Técnica educativa 31 <span id="status-31" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 31: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 31: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 31: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 31: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 31</div>
+                    <div class="input-group">
+                        <input type="text" id="input-31" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="31">Comprobar</button>
+                    </div>
+                    <div id="feedback-31" class="feedback"></div>
+                    <div class="answer-hint" data-id="31">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-31" class="hidden-answer">✅ Respuesta sugerida para la técnica 31</div>
+                    <button class="reset-card-btn" data-id="31">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="32">
+            <div class="card-header">
+                <h3>#32 · Técnica educativa 32 <span id="status-32" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 32: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 32: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 32: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 32: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 32</div>
+                    <div class="input-group">
+                        <input type="text" id="input-32" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="32">Comprobar</button>
+                    </div>
+                    <div id="feedback-32" class="feedback"></div>
+                    <div class="answer-hint" data-id="32">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-32" class="hidden-answer">✅ Respuesta sugerida para la técnica 32</div>
+                    <button class="reset-card-btn" data-id="32">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="33">
+            <div class="card-header">
+                <h3>#33 · Técnica educativa 33 <span id="status-33" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 33: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 33: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 33: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 33: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 33</div>
+                    <div class="input-group">
+                        <input type="text" id="input-33" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="33">Comprobar</button>
+                    </div>
+                    <div id="feedback-33" class="feedback"></div>
+                    <div class="answer-hint" data-id="33">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-33" class="hidden-answer">✅ Respuesta sugerida para la técnica 33</div>
+                    <button class="reset-card-btn" data-id="33">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="34">
+            <div class="card-header">
+                <h3>#34 · Técnica educativa 34 <span id="status-34" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 34: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 34: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 34: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 34: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 34</div>
+                    <div class="input-group">
+                        <input type="text" id="input-34" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="34">Comprobar</button>
+                    </div>
+                    <div id="feedback-34" class="feedback"></div>
+                    <div class="answer-hint" data-id="34">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-34" class="hidden-answer">✅ Respuesta sugerida para la técnica 34</div>
+                    <button class="reset-card-btn" data-id="34">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="35">
+            <div class="card-header">
+                <h3>#35 · Técnica educativa 35 <span id="status-35" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 35: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 35: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 35: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 35: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 35</div>
+                    <div class="input-group">
+                        <input type="text" id="input-35" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="35">Comprobar</button>
+                    </div>
+                    <div id="feedback-35" class="feedback"></div>
+                    <div class="answer-hint" data-id="35">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-35" class="hidden-answer">✅ Respuesta sugerida para la técnica 35</div>
+                    <button class="reset-card-btn" data-id="35">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="36">
+            <div class="card-header">
+                <h3>#36 · Técnica educativa 36 <span id="status-36" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 36: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 36: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 36: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 36: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 36</div>
+                    <div class="input-group">
+                        <input type="text" id="input-36" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="36">Comprobar</button>
+                    </div>
+                    <div id="feedback-36" class="feedback"></div>
+                    <div class="answer-hint" data-id="36">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-36" class="hidden-answer">✅ Respuesta sugerida para la técnica 36</div>
+                    <button class="reset-card-btn" data-id="36">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="37">
+            <div class="card-header">
+                <h3>#37 · Técnica educativa 37 <span id="status-37" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 37: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 37: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 37: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 37: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 37</div>
+                    <div class="input-group">
+                        <input type="text" id="input-37" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="37">Comprobar</button>
+                    </div>
+                    <div id="feedback-37" class="feedback"></div>
+                    <div class="answer-hint" data-id="37">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-37" class="hidden-answer">✅ Respuesta sugerida para la técnica 37</div>
+                    <button class="reset-card-btn" data-id="37">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="38">
+            <div class="card-header">
+                <h3>#38 · Técnica educativa 38 <span id="status-38" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 38: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 38: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 38: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 38: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 38</div>
+                    <div class="input-group">
+                        <input type="text" id="input-38" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="38">Comprobar</button>
+                    </div>
+                    <div id="feedback-38" class="feedback"></div>
+                    <div class="answer-hint" data-id="38">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-38" class="hidden-answer">✅ Respuesta sugerida para la técnica 38</div>
+                    <button class="reset-card-btn" data-id="38">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="39">
+            <div class="card-header">
+                <h3>#39 · Técnica educativa 39 <span id="status-39" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 39: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 39: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 39: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 39: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 39</div>
+                    <div class="input-group">
+                        <input type="text" id="input-39" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="39">Comprobar</button>
+                    </div>
+                    <div id="feedback-39" class="feedback"></div>
+                    <div class="answer-hint" data-id="39">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-39" class="hidden-answer">✅ Respuesta sugerida para la técnica 39</div>
+                    <button class="reset-card-btn" data-id="39">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="40">
+            <div class="card-header">
+                <h3>#40 · Técnica educativa 40 <span id="status-40" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 40: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 40: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 40: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 40: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 40</div>
+                    <div class="input-group">
+                        <input type="text" id="input-40" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="40">Comprobar</button>
+                    </div>
+                    <div id="feedback-40" class="feedback"></div>
+                    <div class="answer-hint" data-id="40">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-40" class="hidden-answer">✅ Respuesta sugerida para la técnica 40</div>
+                    <button class="reset-card-btn" data-id="40">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="41">
+            <div class="card-header">
+                <h3>#41 · Técnica educativa 41 <span id="status-41" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 41: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 41: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 41: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 41: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 41</div>
+                    <div class="input-group">
+                        <input type="text" id="input-41" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="41">Comprobar</button>
+                    </div>
+                    <div id="feedback-41" class="feedback"></div>
+                    <div class="answer-hint" data-id="41">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-41" class="hidden-answer">✅ Respuesta sugerida para la técnica 41</div>
+                    <button class="reset-card-btn" data-id="41">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="42">
+            <div class="card-header">
+                <h3>#42 · Técnica educativa 42 <span id="status-42" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 42: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 42: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 42: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 42: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 42</div>
+                    <div class="input-group">
+                        <input type="text" id="input-42" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="42">Comprobar</button>
+                    </div>
+                    <div id="feedback-42" class="feedback"></div>
+                    <div class="answer-hint" data-id="42">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-42" class="hidden-answer">✅ Respuesta sugerida para la técnica 42</div>
+                    <button class="reset-card-btn" data-id="42">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="43">
+            <div class="card-header">
+                <h3>#43 · Técnica educativa 43 <span id="status-43" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 43: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 43: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 43: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 43: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 43</div>
+                    <div class="input-group">
+                        <input type="text" id="input-43" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="43">Comprobar</button>
+                    </div>
+                    <div id="feedback-43" class="feedback"></div>
+                    <div class="answer-hint" data-id="43">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-43" class="hidden-answer">✅ Respuesta sugerida para la técnica 43</div>
+                    <button class="reset-card-btn" data-id="43">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="44">
+            <div class="card-header">
+                <h3>#44 · Técnica educativa 44 <span id="status-44" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 44: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 44: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 44: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 44: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 44</div>
+                    <div class="input-group">
+                        <input type="text" id="input-44" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="44">Comprobar</button>
+                    </div>
+                    <div id="feedback-44" class="feedback"></div>
+                    <div class="answer-hint" data-id="44">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-44" class="hidden-answer">✅ Respuesta sugerida para la técnica 44</div>
+                    <button class="reset-card-btn" data-id="44">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="45">
+            <div class="card-header">
+                <h3>#45 · Técnica educativa 45 <span id="status-45" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 45: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 45: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 45: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 45: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 45</div>
+                    <div class="input-group">
+                        <input type="text" id="input-45" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="45">Comprobar</button>
+                    </div>
+                    <div id="feedback-45" class="feedback"></div>
+                    <div class="answer-hint" data-id="45">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-45" class="hidden-answer">✅ Respuesta sugerida para la técnica 45</div>
+                    <button class="reset-card-btn" data-id="45">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="46">
+            <div class="card-header">
+                <h3>#46 · Técnica educativa 46 <span id="status-46" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 46: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 46: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 46: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 46: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 46</div>
+                    <div class="input-group">
+                        <input type="text" id="input-46" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="46">Comprobar</button>
+                    </div>
+                    <div id="feedback-46" class="feedback"></div>
+                    <div class="answer-hint" data-id="46">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-46" class="hidden-answer">✅ Respuesta sugerida para la técnica 46</div>
+                    <button class="reset-card-btn" data-id="46">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="47">
+            <div class="card-header">
+                <h3>#47 · Técnica educativa 47 <span id="status-47" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 47: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 47: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 47: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 47: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 47</div>
+                    <div class="input-group">
+                        <input type="text" id="input-47" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="47">Comprobar</button>
+                    </div>
+                    <div id="feedback-47" class="feedback"></div>
+                    <div class="answer-hint" data-id="47">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-47" class="hidden-answer">✅ Respuesta sugerida para la técnica 47</div>
+                    <button class="reset-card-btn" data-id="47">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="48">
+            <div class="card-header">
+                <h3>#48 · Técnica educativa 48 <span id="status-48" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 48: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 48: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 48: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 48: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 48</div>
+                    <div class="input-group">
+                        <input type="text" id="input-48" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="48">Comprobar</button>
+                    </div>
+                    <div id="feedback-48" class="feedback"></div>
+                    <div class="answer-hint" data-id="48">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-48" class="hidden-answer">✅ Respuesta sugerida para la técnica 48</div>
+                    <button class="reset-card-btn" data-id="48">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="49">
+            <div class="card-header">
+                <h3>#49 · Técnica educativa 49 <span id="status-49" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 49: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 49: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 49: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 49: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 49</div>
+                    <div class="input-group">
+                        <input type="text" id="input-49" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="49">Comprobar</button>
+                    </div>
+                    <div id="feedback-49" class="feedback"></div>
+                    <div class="answer-hint" data-id="49">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-49" class="hidden-answer">✅ Respuesta sugerida para la técnica 49</div>
+                    <button class="reset-card-btn" data-id="49">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="50">
+            <div class="card-header">
+                <h3>#50 · Técnica educativa 50 <span id="status-50" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 50: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 50: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 50: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 50: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 50</div>
+                    <div class="input-group">
+                        <input type="text" id="input-50" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="50">Comprobar</button>
+                    </div>
+                    <div id="feedback-50" class="feedback"></div>
+                    <div class="answer-hint" data-id="50">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-50" class="hidden-answer">✅ Respuesta sugerida para la técnica 50</div>
+                    <button class="reset-card-btn" data-id="50">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="51">
+            <div class="card-header">
+                <h3>#51 · Técnica educativa 51 <span id="status-51" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 51: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 51: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 51: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 51: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 51</div>
+                    <div class="input-group">
+                        <input type="text" id="input-51" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="51">Comprobar</button>
+                    </div>
+                    <div id="feedback-51" class="feedback"></div>
+                    <div class="answer-hint" data-id="51">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-51" class="hidden-answer">✅ Respuesta sugerida para la técnica 51</div>
+                    <button class="reset-card-btn" data-id="51">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="52">
+            <div class="card-header">
+                <h3>#52 · Técnica educativa 52 <span id="status-52" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 52: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 52: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 52: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 52: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 52</div>
+                    <div class="input-group">
+                        <input type="text" id="input-52" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="52">Comprobar</button>
+                    </div>
+                    <div id="feedback-52" class="feedback"></div>
+                    <div class="answer-hint" data-id="52">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-52" class="hidden-answer">✅ Respuesta sugerida para la técnica 52</div>
+                    <button class="reset-card-btn" data-id="52">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="53">
+            <div class="card-header">
+                <h3>#53 · Técnica educativa 53 <span id="status-53" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 53: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 53: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 53: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 53: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 53</div>
+                    <div class="input-group">
+                        <input type="text" id="input-53" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="53">Comprobar</button>
+                    </div>
+                    <div id="feedback-53" class="feedback"></div>
+                    <div class="answer-hint" data-id="53">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-53" class="hidden-answer">✅ Respuesta sugerida para la técnica 53</div>
+                    <button class="reset-card-btn" data-id="53">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="54">
+            <div class="card-header">
+                <h3>#54 · Técnica educativa 54 <span id="status-54" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 54: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 54: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 54: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 54: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 54</div>
+                    <div class="input-group">
+                        <input type="text" id="input-54" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="54">Comprobar</button>
+                    </div>
+                    <div id="feedback-54" class="feedback"></div>
+                    <div class="answer-hint" data-id="54">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-54" class="hidden-answer">✅ Respuesta sugerida para la técnica 54</div>
+                    <button class="reset-card-btn" data-id="54">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="55">
+            <div class="card-header">
+                <h3>#55 · Técnica educativa 55 <span id="status-55" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 55: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 55: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 55: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 55: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 55</div>
+                    <div class="input-group">
+                        <input type="text" id="input-55" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="55">Comprobar</button>
+                    </div>
+                    <div id="feedback-55" class="feedback"></div>
+                    <div class="answer-hint" data-id="55">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-55" class="hidden-answer">✅ Respuesta sugerida para la técnica 55</div>
+                    <button class="reset-card-btn" data-id="55">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="56">
+            <div class="card-header">
+                <h3>#56 · Técnica educativa 56 <span id="status-56" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 56: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 56: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 56: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 56: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 56</div>
+                    <div class="input-group">
+                        <input type="text" id="input-56" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="56">Comprobar</button>
+                    </div>
+                    <div id="feedback-56" class="feedback"></div>
+                    <div class="answer-hint" data-id="56">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-56" class="hidden-answer">✅ Respuesta sugerida para la técnica 56</div>
+                    <button class="reset-card-btn" data-id="56">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="57">
+            <div class="card-header">
+                <h3>#57 · Técnica educativa 57 <span id="status-57" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 57: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 57: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 57: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 57: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 57</div>
+                    <div class="input-group">
+                        <input type="text" id="input-57" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="57">Comprobar</button>
+                    </div>
+                    <div id="feedback-57" class="feedback"></div>
+                    <div class="answer-hint" data-id="57">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-57" class="hidden-answer">✅ Respuesta sugerida para la técnica 57</div>
+                    <button class="reset-card-btn" data-id="57">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="58">
+            <div class="card-header">
+                <h3>#58 · Técnica educativa 58 <span id="status-58" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 58: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 58: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 58: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 58: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 58</div>
+                    <div class="input-group">
+                        <input type="text" id="input-58" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="58">Comprobar</button>
+                    </div>
+                    <div id="feedback-58" class="feedback"></div>
+                    <div class="answer-hint" data-id="58">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-58" class="hidden-answer">✅ Respuesta sugerida para la técnica 58</div>
+                    <button class="reset-card-btn" data-id="58">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="59">
+            <div class="card-header">
+                <h3>#59 · Técnica educativa 59 <span id="status-59" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 59: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 59: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 59: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 59: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 59</div>
+                    <div class="input-group">
+                        <input type="text" id="input-59" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="59">Comprobar</button>
+                    </div>
+                    <div id="feedback-59" class="feedback"></div>
+                    <div class="answer-hint" data-id="59">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-59" class="hidden-answer">✅ Respuesta sugerida para la técnica 59</div>
+                    <button class="reset-card-btn" data-id="59">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="60">
+            <div class="card-header">
+                <h3>#60 · Técnica educativa 60 <span id="status-60" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 60: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 60: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 60: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 60: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 60</div>
+                    <div class="input-group">
+                        <input type="text" id="input-60" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="60">Comprobar</button>
+                    </div>
+                    <div id="feedback-60" class="feedback"></div>
+                    <div class="answer-hint" data-id="60">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-60" class="hidden-answer">✅ Respuesta sugerida para la técnica 60</div>
+                    <button class="reset-card-btn" data-id="60">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="61">
+            <div class="card-header">
+                <h3>#61 · Técnica educativa 61 <span id="status-61" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 61: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 61: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 61: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 61: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 61</div>
+                    <div class="input-group">
+                        <input type="text" id="input-61" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="61">Comprobar</button>
+                    </div>
+                    <div id="feedback-61" class="feedback"></div>
+                    <div class="answer-hint" data-id="61">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-61" class="hidden-answer">✅ Respuesta sugerida para la técnica 61</div>
+                    <button class="reset-card-btn" data-id="61">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="62">
+            <div class="card-header">
+                <h3>#62 · Técnica educativa 62 <span id="status-62" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 62: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 62: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 62: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 62: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 62</div>
+                    <div class="input-group">
+                        <input type="text" id="input-62" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="62">Comprobar</button>
+                    </div>
+                    <div id="feedback-62" class="feedback"></div>
+                    <div class="answer-hint" data-id="62">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-62" class="hidden-answer">✅ Respuesta sugerida para la técnica 62</div>
+                    <button class="reset-card-btn" data-id="62">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="63">
+            <div class="card-header">
+                <h3>#63 · Técnica educativa 63 <span id="status-63" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 63: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 63: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 63: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 63: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 63</div>
+                    <div class="input-group">
+                        <input type="text" id="input-63" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="63">Comprobar</button>
+                    </div>
+                    <div id="feedback-63" class="feedback"></div>
+                    <div class="answer-hint" data-id="63">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-63" class="hidden-answer">✅ Respuesta sugerida para la técnica 63</div>
+                    <button class="reset-card-btn" data-id="63">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="64">
+            <div class="card-header">
+                <h3>#64 · Técnica educativa 64 <span id="status-64" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 64: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 64: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 64: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 64: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 64</div>
+                    <div class="input-group">
+                        <input type="text" id="input-64" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="64">Comprobar</button>
+                    </div>
+                    <div id="feedback-64" class="feedback"></div>
+                    <div class="answer-hint" data-id="64">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-64" class="hidden-answer">✅ Respuesta sugerida para la técnica 64</div>
+                    <button class="reset-card-btn" data-id="64">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="65">
+            <div class="card-header">
+                <h3>#65 · Técnica educativa 65 <span id="status-65" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 65: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 65: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 65: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 65: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 65</div>
+                    <div class="input-group">
+                        <input type="text" id="input-65" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="65">Comprobar</button>
+                    </div>
+                    <div id="feedback-65" class="feedback"></div>
+                    <div class="answer-hint" data-id="65">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-65" class="hidden-answer">✅ Respuesta sugerida para la técnica 65</div>
+                    <button class="reset-card-btn" data-id="65">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="66">
+            <div class="card-header">
+                <h3>#66 · Técnica educativa 66 <span id="status-66" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 66: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 66: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 66: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 66: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 66</div>
+                    <div class="input-group">
+                        <input type="text" id="input-66" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="66">Comprobar</button>
+                    </div>
+                    <div id="feedback-66" class="feedback"></div>
+                    <div class="answer-hint" data-id="66">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-66" class="hidden-answer">✅ Respuesta sugerida para la técnica 66</div>
+                    <button class="reset-card-btn" data-id="66">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="67">
+            <div class="card-header">
+                <h3>#67 · Técnica educativa 67 <span id="status-67" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 67: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 67: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 67: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 67: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 67</div>
+                    <div class="input-group">
+                        <input type="text" id="input-67" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="67">Comprobar</button>
+                    </div>
+                    <div id="feedback-67" class="feedback"></div>
+                    <div class="answer-hint" data-id="67">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-67" class="hidden-answer">✅ Respuesta sugerida para la técnica 67</div>
+                    <button class="reset-card-btn" data-id="67">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="68">
+            <div class="card-header">
+                <h3>#68 · Técnica educativa 68 <span id="status-68" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 68: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 68: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 68: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 68: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 68</div>
+                    <div class="input-group">
+                        <input type="text" id="input-68" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="68">Comprobar</button>
+                    </div>
+                    <div id="feedback-68" class="feedback"></div>
+                    <div class="answer-hint" data-id="68">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-68" class="hidden-answer">✅ Respuesta sugerida para la técnica 68</div>
+                    <button class="reset-card-btn" data-id="68">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="69">
+            <div class="card-header">
+                <h3>#69 · Técnica educativa 69 <span id="status-69" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 69: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 69: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 69: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 69: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 69</div>
+                    <div class="input-group">
+                        <input type="text" id="input-69" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="69">Comprobar</button>
+                    </div>
+                    <div id="feedback-69" class="feedback"></div>
+                    <div class="answer-hint" data-id="69">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-69" class="hidden-answer">✅ Respuesta sugerida para la técnica 69</div>
+                    <button class="reset-card-btn" data-id="69">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="70">
+            <div class="card-header">
+                <h3>#70 · Técnica educativa 70 <span id="status-70" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 70: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 70: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 70: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 70: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 70</div>
+                    <div class="input-group">
+                        <input type="text" id="input-70" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="70">Comprobar</button>
+                    </div>
+                    <div id="feedback-70" class="feedback"></div>
+                    <div class="answer-hint" data-id="70">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-70" class="hidden-answer">✅ Respuesta sugerida para la técnica 70</div>
+                    <button class="reset-card-btn" data-id="70">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="71">
+            <div class="card-header">
+                <h3>#71 · Técnica educativa 71 <span id="status-71" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 71: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 71: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 71: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 71: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 71</div>
+                    <div class="input-group">
+                        <input type="text" id="input-71" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="71">Comprobar</button>
+                    </div>
+                    <div id="feedback-71" class="feedback"></div>
+                    <div class="answer-hint" data-id="71">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-71" class="hidden-answer">✅ Respuesta sugerida para la técnica 71</div>
+                    <button class="reset-card-btn" data-id="71">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="72">
+            <div class="card-header">
+                <h3>#72 · Técnica educativa 72 <span id="status-72" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 72: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 72: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 72: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 72: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 72</div>
+                    <div class="input-group">
+                        <input type="text" id="input-72" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="72">Comprobar</button>
+                    </div>
+                    <div id="feedback-72" class="feedback"></div>
+                    <div class="answer-hint" data-id="72">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-72" class="hidden-answer">✅ Respuesta sugerida para la técnica 72</div>
+                    <button class="reset-card-btn" data-id="72">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="73">
+            <div class="card-header">
+                <h3>#73 · Técnica educativa 73 <span id="status-73" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 73: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 73: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 73: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 73: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 73</div>
+                    <div class="input-group">
+                        <input type="text" id="input-73" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="73">Comprobar</button>
+                    </div>
+                    <div id="feedback-73" class="feedback"></div>
+                    <div class="answer-hint" data-id="73">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-73" class="hidden-answer">✅ Respuesta sugerida para la técnica 73</div>
+                    <button class="reset-card-btn" data-id="73">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="74">
+            <div class="card-header">
+                <h3>#74 · Técnica educativa 74 <span id="status-74" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 74: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 74: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 74: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 74: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 74</div>
+                    <div class="input-group">
+                        <input type="text" id="input-74" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="74">Comprobar</button>
+                    </div>
+                    <div id="feedback-74" class="feedback"></div>
+                    <div class="answer-hint" data-id="74">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-74" class="hidden-answer">✅ Respuesta sugerida para la técnica 74</div>
+                    <button class="reset-card-btn" data-id="74">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="75">
+            <div class="card-header">
+                <h3>#75 · Técnica educativa 75 <span id="status-75" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 75: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 75: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 75: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 75: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 75</div>
+                    <div class="input-group">
+                        <input type="text" id="input-75" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="75">Comprobar</button>
+                    </div>
+                    <div id="feedback-75" class="feedback"></div>
+                    <div class="answer-hint" data-id="75">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-75" class="hidden-answer">✅ Respuesta sugerida para la técnica 75</div>
+                    <button class="reset-card-btn" data-id="75">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="76">
+            <div class="card-header">
+                <h3>#76 · Técnica educativa 76 <span id="status-76" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 76: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 76: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 76: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 76: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 76</div>
+                    <div class="input-group">
+                        <input type="text" id="input-76" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="76">Comprobar</button>
+                    </div>
+                    <div id="feedback-76" class="feedback"></div>
+                    <div class="answer-hint" data-id="76">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-76" class="hidden-answer">✅ Respuesta sugerida para la técnica 76</div>
+                    <button class="reset-card-btn" data-id="76">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="77">
+            <div class="card-header">
+                <h3>#77 · Técnica educativa 77 <span id="status-77" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 77: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 77: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 77: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 77: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 77</div>
+                    <div class="input-group">
+                        <input type="text" id="input-77" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="77">Comprobar</button>
+                    </div>
+                    <div id="feedback-77" class="feedback"></div>
+                    <div class="answer-hint" data-id="77">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-77" class="hidden-answer">✅ Respuesta sugerida para la técnica 77</div>
+                    <button class="reset-card-btn" data-id="77">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="78">
+            <div class="card-header">
+                <h3>#78 · Técnica educativa 78 <span id="status-78" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 78: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 78: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 78: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 78: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 78</div>
+                    <div class="input-group">
+                        <input type="text" id="input-78" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="78">Comprobar</button>
+                    </div>
+                    <div id="feedback-78" class="feedback"></div>
+                    <div class="answer-hint" data-id="78">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-78" class="hidden-answer">✅ Respuesta sugerida para la técnica 78</div>
+                    <button class="reset-card-btn" data-id="78">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="79">
+            <div class="card-header">
+                <h3>#79 · Técnica educativa 79 <span id="status-79" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 79: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 79: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 79: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 79: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 79</div>
+                    <div class="input-group">
+                        <input type="text" id="input-79" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="79">Comprobar</button>
+                    </div>
+                    <div id="feedback-79" class="feedback"></div>
+                    <div class="answer-hint" data-id="79">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-79" class="hidden-answer">✅ Respuesta sugerida para la técnica 79</div>
+                    <button class="reset-card-btn" data-id="79">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="80">
+            <div class="card-header">
+                <h3>#80 · Técnica educativa 80 <span id="status-80" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 80: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 80: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 80: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 80: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 80</div>
+                    <div class="input-group">
+                        <input type="text" id="input-80" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="80">Comprobar</button>
+                    </div>
+                    <div id="feedback-80" class="feedback"></div>
+                    <div class="answer-hint" data-id="80">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-80" class="hidden-answer">✅ Respuesta sugerida para la técnica 80</div>
+                    <button class="reset-card-btn" data-id="80">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="81">
+            <div class="card-header">
+                <h3>#81 · Técnica educativa 81 <span id="status-81" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 81: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 81: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 81: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 81: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 81</div>
+                    <div class="input-group">
+                        <input type="text" id="input-81" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="81">Comprobar</button>
+                    </div>
+                    <div id="feedback-81" class="feedback"></div>
+                    <div class="answer-hint" data-id="81">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-81" class="hidden-answer">✅ Respuesta sugerida para la técnica 81</div>
+                    <button class="reset-card-btn" data-id="81">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="82">
+            <div class="card-header">
+                <h3>#82 · Técnica educativa 82 <span id="status-82" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 82: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 82: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 82: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 82: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 82</div>
+                    <div class="input-group">
+                        <input type="text" id="input-82" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="82">Comprobar</button>
+                    </div>
+                    <div id="feedback-82" class="feedback"></div>
+                    <div class="answer-hint" data-id="82">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-82" class="hidden-answer">✅ Respuesta sugerida para la técnica 82</div>
+                    <button class="reset-card-btn" data-id="82">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="83">
+            <div class="card-header">
+                <h3>#83 · Técnica educativa 83 <span id="status-83" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 83: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 83: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 83: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 83: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 83</div>
+                    <div class="input-group">
+                        <input type="text" id="input-83" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="83">Comprobar</button>
+                    </div>
+                    <div id="feedback-83" class="feedback"></div>
+                    <div class="answer-hint" data-id="83">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-83" class="hidden-answer">✅ Respuesta sugerida para la técnica 83</div>
+                    <button class="reset-card-btn" data-id="83">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="84">
+            <div class="card-header">
+                <h3>#84 · Técnica educativa 84 <span id="status-84" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 84: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 84: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 84: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 84: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 84</div>
+                    <div class="input-group">
+                        <input type="text" id="input-84" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="84">Comprobar</button>
+                    </div>
+                    <div id="feedback-84" class="feedback"></div>
+                    <div class="answer-hint" data-id="84">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-84" class="hidden-answer">✅ Respuesta sugerida para la técnica 84</div>
+                    <button class="reset-card-btn" data-id="84">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="85">
+            <div class="card-header">
+                <h3>#85 · Técnica educativa 85 <span id="status-85" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 85: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 85: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 85: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 85: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 85</div>
+                    <div class="input-group">
+                        <input type="text" id="input-85" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="85">Comprobar</button>
+                    </div>
+                    <div id="feedback-85" class="feedback"></div>
+                    <div class="answer-hint" data-id="85">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-85" class="hidden-answer">✅ Respuesta sugerida para la técnica 85</div>
+                    <button class="reset-card-btn" data-id="85">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="86">
+            <div class="card-header">
+                <h3>#86 · Técnica educativa 86 <span id="status-86" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 86: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 86: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 86: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 86: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 86</div>
+                    <div class="input-group">
+                        <input type="text" id="input-86" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="86">Comprobar</button>
+                    </div>
+                    <div id="feedback-86" class="feedback"></div>
+                    <div class="answer-hint" data-id="86">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-86" class="hidden-answer">✅ Respuesta sugerida para la técnica 86</div>
+                    <button class="reset-card-btn" data-id="86">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="87">
+            <div class="card-header">
+                <h3>#87 · Técnica educativa 87 <span id="status-87" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 87: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 87: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 87: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 87: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 87</div>
+                    <div class="input-group">
+                        <input type="text" id="input-87" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="87">Comprobar</button>
+                    </div>
+                    <div id="feedback-87" class="feedback"></div>
+                    <div class="answer-hint" data-id="87">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-87" class="hidden-answer">✅ Respuesta sugerida para la técnica 87</div>
+                    <button class="reset-card-btn" data-id="87">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="88">
+            <div class="card-header">
+                <h3>#88 · Técnica educativa 88 <span id="status-88" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 88: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 88: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 88: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 88: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 88</div>
+                    <div class="input-group">
+                        <input type="text" id="input-88" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="88">Comprobar</button>
+                    </div>
+                    <div id="feedback-88" class="feedback"></div>
+                    <div class="answer-hint" data-id="88">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-88" class="hidden-answer">✅ Respuesta sugerida para la técnica 88</div>
+                    <button class="reset-card-btn" data-id="88">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="89">
+            <div class="card-header">
+                <h3>#89 · Técnica educativa 89 <span id="status-89" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 89: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 89: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 89: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 89: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 89</div>
+                    <div class="input-group">
+                        <input type="text" id="input-89" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="89">Comprobar</button>
+                    </div>
+                    <div id="feedback-89" class="feedback"></div>
+                    <div class="answer-hint" data-id="89">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-89" class="hidden-answer">✅ Respuesta sugerida para la técnica 89</div>
+                    <button class="reset-card-btn" data-id="89">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="90">
+            <div class="card-header">
+                <h3>#90 · Técnica educativa 90 <span id="status-90" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 90: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 90: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 90: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 90: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 90</div>
+                    <div class="input-group">
+                        <input type="text" id="input-90" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="90">Comprobar</button>
+                    </div>
+                    <div id="feedback-90" class="feedback"></div>
+                    <div class="answer-hint" data-id="90">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-90" class="hidden-answer">✅ Respuesta sugerida para la técnica 90</div>
+                    <button class="reset-card-btn" data-id="90">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="91">
+            <div class="card-header">
+                <h3>#91 · Técnica educativa 91 <span id="status-91" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 91: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 91: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 91: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 91: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 91</div>
+                    <div class="input-group">
+                        <input type="text" id="input-91" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="91">Comprobar</button>
+                    </div>
+                    <div id="feedback-91" class="feedback"></div>
+                    <div class="answer-hint" data-id="91">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-91" class="hidden-answer">✅ Respuesta sugerida para la técnica 91</div>
+                    <button class="reset-card-btn" data-id="91">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="92">
+            <div class="card-header">
+                <h3>#92 · Técnica educativa 92 <span id="status-92" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 92: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 92: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 92: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 92: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 92</div>
+                    <div class="input-group">
+                        <input type="text" id="input-92" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="92">Comprobar</button>
+                    </div>
+                    <div id="feedback-92" class="feedback"></div>
+                    <div class="answer-hint" data-id="92">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-92" class="hidden-answer">✅ Respuesta sugerida para la técnica 92</div>
+                    <button class="reset-card-btn" data-id="92">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="93">
+            <div class="card-header">
+                <h3>#93 · Técnica educativa 93 <span id="status-93" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 93: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 93: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 93: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 93: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 93</div>
+                    <div class="input-group">
+                        <input type="text" id="input-93" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="93">Comprobar</button>
+                    </div>
+                    <div id="feedback-93" class="feedback"></div>
+                    <div class="answer-hint" data-id="93">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-93" class="hidden-answer">✅ Respuesta sugerida para la técnica 93</div>
+                    <button class="reset-card-btn" data-id="93">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="94">
+            <div class="card-header">
+                <h3>#94 · Técnica educativa 94 <span id="status-94" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 94: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 94: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 94: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 94: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 94</div>
+                    <div class="input-group">
+                        <input type="text" id="input-94" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="94">Comprobar</button>
+                    </div>
+                    <div id="feedback-94" class="feedback"></div>
+                    <div class="answer-hint" data-id="94">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-94" class="hidden-answer">✅ Respuesta sugerida para la técnica 94</div>
+                    <button class="reset-card-btn" data-id="94">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="95">
+            <div class="card-header">
+                <h3>#95 · Técnica educativa 95 <span id="status-95" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 95: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 95: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 95: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 95: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 95</div>
+                    <div class="input-group">
+                        <input type="text" id="input-95" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="95">Comprobar</button>
+                    </div>
+                    <div id="feedback-95" class="feedback"></div>
+                    <div class="answer-hint" data-id="95">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-95" class="hidden-answer">✅ Respuesta sugerida para la técnica 95</div>
+                    <button class="reset-card-btn" data-id="95">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="96">
+            <div class="card-header">
+                <h3>#96 · Técnica educativa 96 <span id="status-96" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 96: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 96: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 96: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 96: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 96</div>
+                    <div class="input-group">
+                        <input type="text" id="input-96" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="96">Comprobar</button>
+                    </div>
+                    <div id="feedback-96" class="feedback"></div>
+                    <div class="answer-hint" data-id="96">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-96" class="hidden-answer">✅ Respuesta sugerida para la técnica 96</div>
+                    <button class="reset-card-btn" data-id="96">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="97">
+            <div class="card-header">
+                <h3>#97 · Técnica educativa 97 <span id="status-97" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 97: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 97: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 97: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 97: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 97</div>
+                    <div class="input-group">
+                        <input type="text" id="input-97" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="97">Comprobar</button>
+                    </div>
+                    <div id="feedback-97" class="feedback"></div>
+                    <div class="answer-hint" data-id="97">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-97" class="hidden-answer">✅ Respuesta sugerida para la técnica 97</div>
+                    <button class="reset-card-btn" data-id="97">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="98">
+            <div class="card-header">
+                <h3>#98 · Técnica educativa 98 <span id="status-98" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 98: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 98: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 98: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 98: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 98</div>
+                    <div class="input-group">
+                        <input type="text" id="input-98" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="98">Comprobar</button>
+                    </div>
+                    <div id="feedback-98" class="feedback"></div>
+                    <div class="answer-hint" data-id="98">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-98" class="hidden-answer">✅ Respuesta sugerida para la técnica 98</div>
+                    <button class="reset-card-btn" data-id="98">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="99">
+            <div class="card-header">
+                <h3>#99 · Técnica educativa 99 <span id="status-99" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 99: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 99: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 99: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 99: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 99</div>
+                    <div class="input-group">
+                        <input type="text" id="input-99" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="99">Comprobar</button>
+                    </div>
+                    <div id="feedback-99" class="feedback"></div>
+                    <div class="answer-hint" data-id="99">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-99" class="hidden-answer">✅ Respuesta sugerida para la técnica 99</div>
+                    <button class="reset-card-btn" data-id="99">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-id="100">
+            <div class="card-header">
+                <h3>#100 · Técnica educativa 100 <span id="status-100" class="status-icon"></span></h3>
+                <span class="category-tag">Educación general</span>
+                
+            </div>
+            <div class="card-body">
+                <div class="teoria">
+                    <span>📘 Teoría de la técnica 100: concepto fundamental</span>
+                    <button class="btn-speak" data-text="Teoría de la técnica 100: concepto fundamental">🔊 Leer</button>
+                </div>
+                <div class="ejemplo">
+                    <span>💡 Ejemplo de la técnica 100: aplicación práctica</span>
+                    <button class="btn-speak-ejemplo btn-speak" data-text="Ejemplo de la técnica 100: aplicación práctica">🔊 Leer ejemplo</button>
+                </div>
+                <div class="ejercicio-area">
+                    <div class="ejercicio-text">✏️ Ejercicio: Describe la técnica 100</div>
+                    <div class="input-group">
+                        <input type="text" id="input-100" placeholder="Escribe tu respuesta...">
+                        <button class="check-btn" data-id="100">Comprobar</button>
+                    </div>
+                    <div id="feedback-100" class="feedback"></div>
+                    <div class="answer-hint" data-id="100">🔎 Mostrar respuesta sugerida</div>
+                    <div id="answer-100" class="hidden-answer">✅ Respuesta sugerida para la técnica 100</div>
+                    <button class="reset-card-btn" data-id="100">⟳ Reiniciar ejercicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">✅ Generado automáticamente · 100 técnicas con teoría, ejemplo y ejercicio interactivo.</div>
+</div>
+<script>
+// ============================================================
+// PROGRESO Y FUNCIONES INTERACTIVAS
+// ============================================================
+let userProgress = JSON.parse(localStorage.getItem('techProgress')) || {};
+
+function updateGlobalProgress() {
+    let completed = Object.values(userProgress).filter(v=>v===true).length;
+    let total = 100;
+    let percent = Math.round((completed/total)*100);
+    let fill = document.getElementById('globalProgressFill');
+    let percentSpan = document.getElementById('progressPercent');
+    if(fill) fill.style.width = percent+'%';
+    if(percentSpan) percentSpan.innerText = percent+'%';
+}
+
+function setStatus(id, ok){
+    let span = document.getElementById(`status-${id}`);
+    if(span) span.innerHTML = ok ? ' ✅' : '';
+    userProgress[id] = ok;
+    localStorage.setItem('techProgress', JSON.stringify(userProgress));
+    updateGlobalProgress();
+}
+
+function checkAnswer(id, userAns, correctAns, inputEl, fbEl){
+    let normUser = userAns.trim().toLowerCase().replace(/[¿¡]/g,'');
+    let normCorr = correctAns.trim().toLowerCase().replace(/[¿¡]/g,'');
+    let ok = normUser === normCorr;
+    fbEl.innerHTML = ok ? '✓ ¡Correcto!' : `✗ Incorrecto. Respuesta: "${correctAns}"`;
+    fbEl.className = `feedback ${ok ? 'correct' : 'incorrect'}`;
+    inputEl.disabled = true;
+    inputEl.style.backgroundColor = '#f0f0f0';
+    setStatus(id, ok);
+}
+
+function resetCard(id, inputEl, fbEl){
+    inputEl.disabled = false;
+    inputEl.value = '';
+    inputEl.style.backgroundColor = 'white';
+    fbEl.innerHTML = '';
+    fbEl.className = 'feedback';
+    setStatus(id, false);
+}
+
+function speakText(text){
+    if('speechSynthesis' in window){
+        speechSynthesis.cancel();
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'es-ES';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    } else alert("Voz no soportada.");
+}
+
+function renderCards(){
+    let searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    let cat = document.getElementById('categorySelect').value;
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        let title = card.querySelector('h3')?.innerText?.toLowerCase() || '';
+        let category = card.querySelector('.category-tag')?.innerText?.toLowerCase() || '';
+        let theory = card.querySelector('.teoria')?.innerText?.toLowerCase() || '';
+        let match = (cat === 'all' || category === cat) && 
+                   (title.includes(searchTerm) || category.includes(searchTerm) || theory.includes(searchTerm));
+        card.style.display = match ? 'flex' : 'none';
+    });
+}
+
+// Event listeners
+document.getElementById('searchInput').addEventListener('input', renderCards);
+document.getElementById('categorySelect').addEventListener('change', renderCards);
+updateGlobalProgress();
+
+// Configurar todas las tarjetas
+document.querySelectorAll('.card').forEach(card => {
+    const id = card.getAttribute('data-id');
+    const answerDiv = card.querySelector(`#answer-${id}`);
+    const answer = answerDiv?.innerText || '';
+    const hintBtn = card.querySelector(`.answer-hint[data-id="${id}"]`);
+    const resetBtn = card.querySelector(`.reset-card-btn[data-id="${id}"]`);
+    const inputEl = card.querySelector(`#input-${id}`);
+    const checkBtn = card.querySelector(`.check-btn[data-id="${id}"]`);
+    const fbEl = card.querySelector(`#feedback-${id}`);
+    const speakBtns = card.querySelectorAll('.btn-speak');
+    
+    // Botones de voz
+    speakBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.getAttribute('data-text');
+            if(text) speakText(text);
+        });
+    });
+    
+    // Mostrar respuesta
+    if(hintBtn) {
+        hintBtn.addEventListener('click', () => {
+            if(answerDiv) {
+                if(answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                    answerDiv.style.display = 'block';
+                    hintBtn.textContent = '🙈 Ocultar respuesta';
+                } else {
+                    answerDiv.style.display = 'none';
+                    hintBtn.textContent = '🔎 Mostrar respuesta sugerida';
+                }
+            }
+        });
+    }
+    
+    // Comprobar ejercicio
+    if(checkBtn && inputEl && fbEl) {
+        checkBtn.addEventListener('click', () => {
+            if(!inputEl.disabled) {
+                checkAnswer(id, inputEl.value, answer, inputEl, fbEl);
+                checkBtn.disabled = true;
+            }
+        });
+        // Enter key
+        inputEl.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter' && !inputEl.disabled) {
+                checkBtn.click();
+            }
+        });
+    }
+    
+    // Reiniciar ejercicio
+    if(resetBtn && inputEl && fbEl) {
+        resetBtn.addEventListener('click', () => {
+            resetCard(id, inputEl, fbEl);
+            if(checkBtn) checkBtn.disabled = false;
+        });
+    }
+    
+    // Cargar estado previo
+    if(userProgress[id] && inputEl && checkBtn) {
+        inputEl.disabled = true;
+        inputEl.style.backgroundColor = '#f0f0f0';
+        checkBtn.disabled = true;
+    }
+});
+
+console.log('✅ HTML educativo cargado correctamente');
+</script>
+</body>
+</html>
